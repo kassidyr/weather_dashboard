@@ -5,127 +5,113 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Assets/CSS/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"/>
     <title>Weather Dashboard</title>
 </head>
 <body>
     <header>Weather Dashboard</header>
+
     <div class="weatherContainer">
-        <div id="interactiveContent">
-            <!-- search field and city buttons -->
-            <div id="userSelection">
-                <!-- search field -->
+        <div class="interactiveContent">
+            <!-- search field and selection history -->
+            <div class="userSelection">
+                <!--search form -->
                 <form>
-                    <h2 id="searchPrompt">Search for a City:</h2>
-                    <input type="text"/>
-                </form>
-                <button id="searchButton" type="submit">Search</button>
+                    <p class="searchPrompt" for="city">Search for a City:</p> <br />
+                    <input type="text" id="citySelection" name="city" />
+                </form> 
+                <button id="searchButton">Search</button>
             </div>
-            <!-- city buttons -->
-            <div id="cityBtnContainer">
-                    <button type="button" class="cityButton">Austin</button>
-                    <button type="button" class="cityButton">Chicago</button>
-                    <button type="button" class="cityButton">New York</button>
-                    <button type="button" class="cityButton">Orlando</button>
-                    <button type="button" class="cityButton">San Francisco</button>
-                    <button type="button" class="cityButton">Seattle</button>
-                    <button type="button" class="cityButton">Denver</button>
-                    <button type="button" class="cityButton">Atlanta</button>
-            </div>
+  
+            <!-- selection history -->
+            <div class="selectionHistory"></div>
         </div>
-        
-        <div id=weatherOutput>
-            <div id=selectedCity>
-                <!-- Selected City -->
-                <h1 id="selectedCityName">City Name</h1>
-                <!--weather pic-->
-                <img id="weatherIcon" src="" alt="Weather icon" />
-                <!--daily-list-->
-                <div class="listStyle">
-                    <!-- Temperature -->
-                    <section id="tempToday">Temp:</section>
-                    <!-- Wind -->
-                    <section id="windToday">Wind:</section>
-                    <!-- Humidity -->
-                    <section id="humidityToday">Humidity:</section>
-                    <!-- UV Index -->
-                    <section id="uvToday">UV Index:</section>
+  
+        <div class="weatherOutput">
+            <!-- Selected City -->
+            <div id="selectedCity">
+                <p id="selectedCityName">City Name</p>
+                <!-- weather pic -->
+                <img id="weatherIcon" src="" alt="Weather Icon" />
+                <!-- today's weather stats -->
+                <div class="weatherToday">
+                    <p id="tempToday">Temp:</p>
+                    <p id="windToday">Wind:</p>
+                    <p id="humidityToday">Humidity:</p>
+                    <p id="uvToday">UV Index:</p>
                 </div>
             </div>
-
-            <!-- 5-Day Forecast -->
-            <h2 id="fiveDay">5-Day Forecast:</h2>
-            
-            <div id="fiveDayForecast">
-                <!-- Next 5 days -->
-                <div id="dailyForecast">
-                    <h3 class="dailyContainer" id="day1">Date</h3>
-                    <div class="listStyle">
-                        <section id="iconDay1">
-                            <img id="weatherIconDay1" src="" alt="weather icon">
-                        </section>
-                        <section id="tempDay1">Temp:</section>
-                        <section id="windDay1">Wind:</section>
-                        <section id="humidityDay1">Humidity:</section>
+  
+            <h2 id="fiveDayForecast">5-Day Forecast</h2>
+          
+            <div id="fiveDays">
+                <!-- Day 1 -->
+                <div class="dailyCard">
+                    <h2 id="day1">Date</h2>
+                    <div>
+                        <p>
+                            <img id="weatherIcon1" src="" alt="Weather Icon" />
+                        </p>
+                        <p id="tempDay1">Temp:</p>
+                        <p id="windDay1">Wind:</p>
+                        <p id="humidityDay1">Humidity:</p>
                     </div>
                 </div>
-
-                <div id="dailyForecast">
-                    <h3 class="dailyContainer" id="day2">Date</h3>
-                    <div class="listStyle">
-                        <section id="iconDay2">
-                            <img id="weatherIconDay2" src="" alt="weather icon">
-                        </section>
-                        <section id="tempDay2">Temp:</section>
-                        <section id="windDay2">Wind:</section>
-                        <section id="humidityDay2">Humidity:</section>
+                <!-- Day 2 -->
+                <div class="dailyCard">
+                    <h2 id="day2">Date</h2>
+                    <div>
+                        <p>
+                            <img id="weatherIcon2" src="" alt="Weather Icon" />
+                        </p>
+                        <p id="tempDay2">Temp:</p>
+                        <p id="windDay2">Wind:</p>
+                        <p id="humidityDay2">Humidity:</p>
                     </div>
                 </div>
-
-                <div id="dailyForecast">
-                    <h3 class="dailyContainer" id="day3">Date</h3>
-                    <div class="listStyle">
-                        <section id="iconDay3">
-                            <img id="weatherIconDay3" src="" alt="weather icon">
-                        </section>
-                        <section id="tempDay3">Temp:</section>
-                        <section id="windDay3">Wind:</section>
-                        <section id="humidityDay3">Humidity:</section>
+                <!-- Day 3 -->
+                <div class="dailyCard">
+                    <h2 id="day3">Date</h2>
+                    <div>
+                        <p>
+                            <img id="weatherIcon3" src="" alt="Weather Icon" />
+                        </p>
+                        <p id="tempDay3">Temp:</p>
+                        <p id="windDay3">Wind:</p>
+                        <p id="humidityDay3">Humidity:</p>
                     </div>
                 </div>
-
-                <div id="dailyForecast">
-                    <h3 class="dailyContainer" id="day4">Date</h3>
-                    <div class="listStyle">
-                        <section id="iconDay4">
-                            <img id="weatherIconDay4" src="" alt="weather icon">
-                        </section>
-                        <section id="tempDay4">Temp:</section>
-                        <section id="windDay4">Wind:</section>
-                        <section id="humidityDay4">Humidity:</section>
+                <!-- Day 4 -->
+                <div class="dailyCard">
+                    <h2 id="day4">Date</h2>
+                    <div>
+                        <p>
+                            <img id="weatherIcon4" src="" alt="Weather Icon" />
+                        </p>
+                        <p id="tempDay4">Temp:</p>
+                        <p id="windDay4">Wind:</p>
+                        <p id="humidityDay4">Humidity:</p>
                     </div>
                 </div>
-
-                <div id="dailyForecast">
-                    <h3 class="dailyContainer" id="day5">Date</h3>
-                    <div class="listStyle">
-                        <section id="iconDay5">
-                            <img id="weatherIconDay5" src="" alt="weather icon">
-                        </section>
-                        <section id="tempDay5">Temp:</section>
-                        <section id="windDay5">Wind:</section>
-                        <section id="humidityDay5">Humidity:</section>
+                <!-- Day 5 -->
+                <div class="dailyCard">
+                    <h2 id="day5">Date</h2>
+                    <div>
+                        <p>
+                            <img id="weatherIcon5" src="" alt="Weather Icon" />
+                        </p>
+                        <p id="tempDay5">Temp:</p>
+                        <p id="windDay5">Wind:</p>
+                        <p id="humidityDay5">Humidity:</p>
                     </div>
                 </div>
 
             </div>
         </div>
-
     </div>
-    
-</body>
-<script src="Assets/JS/script.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    <script src="Assets/JS/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 </html>
