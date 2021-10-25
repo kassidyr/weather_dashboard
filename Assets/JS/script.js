@@ -1,12 +1,11 @@
-var searchButton = document.querySelector("#searchButton");
-var selectionHistory = document.querySelector(".selectionHistory");
-var weatherOutput = document.querySelector(".weatherOutput");
-var selectedCity = document.querySelector("#selectedCityName");
-var currentTemp = document.querySelector("#tempToday");
-var currentWind = document.querySelector("#windToday");
-var currentHumid = document.querySelector("#humidityToday");
-var currentUv = document.querySelector("#uvToday");
-
+var searchButton = $("#searchButton");
+var selectionHistory = $(".selectionHistory");
+var weatherOutput = $(".weatherOutput");
+var selectedCity = $("#selectedCityName");
+var currentTemp = $("#tempToday");
+var currentWind = $("#windToday");
+var currentHumid = $("#humidityToday");
+var currentUv = $("#uvToday");
 var currentDay = moment();
 
 var city = [];
