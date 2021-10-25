@@ -52,13 +52,12 @@ label, input, button {
 }
 
 .selectionHistory {
-    background-color: lightgray;
+    display: block;
+    background-color: grey;
     width: 100%;
-    padding: 5px 0px;
+    padding: 5px 5px;
     margin-top: 10px;
     text-align: center;
-    list-style: none;
-    border-radius: var(--border-radius);
 }
 
 .weatherOutput {
@@ -104,18 +103,8 @@ label, input, button {
     text-align: left;
 }
 
-#current-uv {
-    display: inline;
-}
-
-.favorable-uv {
-    background-color: lightgreen;
-}
-
-.moderate-uv {
-    background-color: yellow;
-}
-
-.severe-uv {
-    background-color: red;
+p {
+    width: 100%;
+    padding: 5px 5px;
+    margin-top: 10px;
 }
