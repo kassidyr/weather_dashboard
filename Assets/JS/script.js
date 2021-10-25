@@ -18,61 +18,62 @@ function saveSelection() {
 }
 
 function begin() {
-  weatherOutput.attr("style", "display: none");
+    weatherOutput.attr("style", "display: none");
 
-  searchButton.on("click", function () {
+    searchButton.on("click", function () {
+    
     var cityInput = $("#citySelection").val();
     display(cityInput);
 
     for (var i = 0; i < city.length; i++) {
-      if (cityInput == city[i]) {
-        return;
-      }
+        if (cityInput == city[i]) {
+            return;
+        }
     }
 
     city.push(cityInput);
 
-  });
+    });
 }
 
 function display(entry) {
-  var cityInput = entry;
-  weatherOutput.attr("style", "display: block");
+    var cityInput = entry;
+    weatherOutput.attr("style", "display: block");
 
-  var currentForecast = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&units=imperial&appid=5b787b122cd0fc16a703d189885623e5`;
+    var currentForecast = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&units=imperial&appid=5b787b122cd0fc16a703d189885623e5`;
 
-  fetch(currentForecast){
-      
-  }
+    fetch(currentForecast){
+
+    }
 
 function enteredCity() {
-  selectionHistory.text("");
+    selectionHistory.text("");
 
-  for (var i = 0; i < city.length; i++) {
-    var pEl = document.createElement("p");
-    pEl.textContent = city[i].toUpperCase();
-    pEl.setAttribute("id", "citySelection" + i);
-    document.querySelector(".selectionHistory").appendChild(pEl);
-  }
+    for (var i = 0; i < city.length; i++) {
+        var pEl = document.createElement("p");
+        pEl.textContent = city[i].toUpperCase();
+        pEl.setAttribute("id", "citySelection" + i);
+        document.querySelector(".selectionHistory").appendChild(pEl);
+    }
 }
 
 function previousEnteredCity() {
-  selectionHistory.on("click", function (event) {
-    var element = event.target;
+    selectionHistory.on("click", function (event) {
+        var element = event.target;
 
-    if (element.matches("p") === true) {
-      var index = element.getAttribute("id");
+        if (element.matches("p") === true) {
+            var index = element.getAttribute("id");
 
-      for (var i = 0; i < city.length; i++) {
-        var prevSelectedCity = $("#citySelection" + i)[0].innerText;
+            for (var i = 0; i < city.length; i++) {
+                var prevSelectedCity = $("#citySelection" + i)[0].innerText;
 
-        if (index == $("#citySelection" + i)[0].id) {
-          displayWeather(prevSelectedCity);
-          break;
+                if (index == $("#citySelection" + i)[0].id) {
+                displayWeather(prevSelectedCity);
+                break;
+                }
+            } 
         }
-      }
-    }
-  });
+    });
 }
 
 enteredCity();
